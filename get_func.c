@@ -19,4 +19,5 @@ int (*get_func(char s))(va_list)
 		if (*ops[i].c == s)
 			return (ops[i].f);
 	}
+	return (NULL);
 }
