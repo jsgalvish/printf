@@ -6,6 +6,7 @@
 **/
 int _printf(const char *format, ...)
 {
+	int count = 0;
 
 	if (format)
 	{
@@ -18,12 +19,12 @@ int _printf(const char *format, ...)
 		for (i = 0; format[i]; i++)
 			if (format[i] == '%')
 			{
-				get_func(format[i + 1])(ar_list);
+				count += get_func(format[i + 1])(ar_list);
 				i++;
 			}
 			else
-				_putchar(format[i]);
+				count += _putchar(format[i]);
 	}
 
-	return (0);
+	return (count);
 }
