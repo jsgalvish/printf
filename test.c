@@ -17,4 +17,10 @@ void main(void)
 	printf("Testing c Flag\n");
 	_printf("Character with _print:[%c][%c][%c][%c]\n", 'H', 'o', 'l', 'b');
 	printf("Character with print:[%c][%c][%c][%c]\n", 'H', 'o', 'l', 'b');
+
+	printf("\n");
+	printf("Testing s Flag\n");
+	_printf("String:[%s]\n", "I am a string !");
+	printf("String:[%s]\n", "I am a string !");
+
 }
