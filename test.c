@@ -4,7 +4,7 @@
 **/
 void main(void)
 {
-	int a;
+	int a, len;
 
 	printf("Testing NULL Value\n");
 	a = _printf(NULL);
@@ -22,5 +22,10 @@ void main(void)
 	printf("Testing s Flag\n");
 	_printf("String:[%s]\n", "I am a string !");
 	printf("String:[%s]\n", "I am a string !");
+
+	printf("\n");
+	printf("Testing count Flag\n");
+	len = printf("count number %c.\n", 'c');
+	printf("Length:[%d]\n", len);
 
 }
