@@ -3,9 +3,23 @@
 
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
+
+/**
+* struct op - flag / function object
+* @c: flag
+* @f: function
+*/
+
+typedef struct op
+{
+	char *c;
+	int (*f)(va_list);
+} op_t;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_c(va_list ar_list);
+int (*get_func(char s))(va_list ar_list);
 
 #endif
