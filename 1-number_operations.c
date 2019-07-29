@@ -6,7 +6,8 @@
  */
 int print_d(va_list ar_list)
 {
-	unsigned int num_Absolute, aux_Num, count_Zero, numbers, count;
+	unsigned int num_Absolute, aux_Num, count_Zero, count;
+	int numbers;
 
 	count = 1;
 
@@ -14,14 +15,11 @@ int print_d(va_list ar_list)
 
 	if (numbers < 0)
 	{
-		_putchar(45);
 		num_Absolute = (numbers * -1);
-		count++;
+		count += _putchar(45);
 	}
 	else
-	{
 		num_Absolute = numbers;
-	}
 
 	aux_Num = num_Absolute;
 	count_Zero = 1;
