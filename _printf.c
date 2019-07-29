@@ -6,24 +6,41 @@
 **/
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	int count = -1;
 
-	if (format)
+	if (format != NULL)
 	{
-		int (*fn)(int, int);
-		va_list ar_list;
 		int i;
+		va_list ar_list;
+		int (*o)(va_list);
 
 		va_start(ar_list, format);
 
-		for (i = 0; format[i]; i++)
+		if (format[0] == '%' && format[1] == '\0')
+			return (-1);
+
+		count = 0;
+
+		for (i = 0; format[i] != '\0'; i++)
+		{
 			if (format[i] == '%')
 			{
-				count += get_func(format[i + 1])(ar_list);
-				i++;
+				if (format[i + 1] == '%')
+				{
+					count += _putchar(format[i]);
+					i++;
+				}
+				else if (format[i + 1] != '\0')
+				{
+					o = get_func(format[i + 1]);
+					count += (o ? o(ar_list) : _putchar(format[i]) + _putchar(format[i + 1]));
+					i++;
+				}
 			}
 			else
 				count += _putchar(format[i]);
+		}
+		va_end(ar_list);
 	}
 
 	return (count);
