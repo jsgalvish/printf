@@ -36,3 +36,12 @@ int print_d(va_list ar_list)
 
 	return (counter);
 }
+/**
+ * print_i - Print the integers
+ * @ar_numlist: Store list numbers
+ * Return: Number print
+ */
+int print_i(va_list ar_numlist)
+{
+	return (va_arg(ar_numlist));
+}
