@@ -6,33 +6,42 @@
  */
 int print_d(va_list ar_list)
 {
-	int i, counter;
-	int arg_d = va_arg(ar_list, int);
-	unsigned int absolute, val_now;
+	unsigned int num_Absolute, aux_Num, count_Zero, count;
+	int numbers;
 
-	counter = 0;
+	count = 0;
 
-	if (arg_d < 0)
-		absolute = -arg_d;
-		_putchar('-');
-		counter++;
-	else
-		absolute = arg_d;
+	numbers = va_arg(ar_list, int);
 
-	val_now = absolute;
-
-	for (i = 1000000000; i > 1; i /= 10)
+	if (numbers < 0)
 	{
-		if (absolute / i)
-		{
-			_putchar('0' + val_now / i);
-
-			counter++;
-		}
-		val_now %= i;
+		num_Absolute = (numbers * -1);
+		count += _putchar(45);
 	}
-	_putchar('\0' + val_now);
-	counter++;
+	else
+		num_Absolute = numbers;
 
-	return (counter);
+	aux_Num = num_Absolute;
+	count_Zero = 1;
+	while (aux_Num > 9)
+	{
+		aux_Num /= 10;
+		count_Zero *= 10;
+	}
+
+	while (count_Zero >= 1)
+	{
+		count += _putchar(((num_Absolute / count_Zero) % 10) + '0');
+		count_Zero /= 10;
+	}
+	return (count);
+}
+/**
+ * print_i - Print the integers
+ * @ar_list: Store list numbers
+ * Return: Number print
+ */
+int print_i(va_list ar_list)
+{
+	return (print_d(ar_list));
 }
