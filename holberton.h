@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
 
 /**
 * struct op - flag / function object

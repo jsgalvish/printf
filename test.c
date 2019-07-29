@@ -28,4 +28,22 @@ void main(void)
 	len = printf("count number %c.\n", 'c');
 	printf("Length:[%d]\n", len);
 
+	int alen, elen;
+	alen = elen = 0;
+	int p = 237482;
+	int n = -328472;
+	int z = 0;
+	elen = printf("Expected here  : %i\n", n);
+	alen = _printf("Actual  here   : %i\n", n);
+	printf("Expected   : %i\n", elen);
+	_printf("Actual     : %i\n", alen);
+	elen = printf("Expected   : %i\n", z);
+	alen = _printf("Actual     : %i\n", z);
+	printf("Expected   : %i\n", elen);
+	_printf("Actual     : %i\n", alen);
+	printf("Expected   : %i\n", INT_MAX);
+	_printf("Actual     : %i\n", INT_MAX);
+	printf("Expected   : %i\n", INT_MIN);
+	_printf("Actual     : %i\n", INT_MIN);
+
 }
